@@ -18,8 +18,8 @@ gulp.task('build', function(callback) {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('deploy', ['default'], function () {
-  return gulp.src('./build/**/*')
+gulp.task('deploy', function() {
+  return gulp.src('build/**/*')
     .pipe(ghPages());
 });
 
