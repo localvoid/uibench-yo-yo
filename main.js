@@ -1486,7 +1486,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     },
     function(samples) {
       container.removeChild(a);
-      console.log(JSON.stringify(samples, null, 2));
+      container.innerText = JSON.stringify(samples, null, 2);
     }
   );
 });
