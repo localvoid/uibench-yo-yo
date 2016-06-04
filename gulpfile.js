@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var browserify = require('gulp-browserify');
+var uglify = require('gulp-uglify');
 var ghPages = require('gulp-gh-pages');
 var path = require('path');
 
@@ -15,6 +16,7 @@ gulp.task('build', function(callback) {
       transform: ['yo-yoify'],
       debug: false
     }))
+    .pipe(uglify())
     .pipe(gulp.dest('build'));
 });
 
