@@ -16,7 +16,7 @@
     "benchmark"
   ],
   "dependencies": {
-    "yo-yo": "^1.2.0"
+    "yo-yo": "^1.2.2"
   },
   "devDependencies": {
     "browserify": "^13.0.1",
@@ -24,7 +24,7 @@
     "gulp-browserify": "^0.5.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-uglify": "^1.5.3",
-    "yo-yoify": "^1.0.4"
+    "yo-yoify": "^3.1.0"
   },
   "browserify": {
     "transform": [

@@ -6,7 +6,7 @@ var ghPages = require('gulp-gh-pages');
 var path = require('path');
 
 gulp.task('html', function() {
-  gulp.src('web/index.html')
+  gulp.src('web/*.html')
     .pipe(gulp.dest('build'));
 });
 
@@ -20,9 +20,19 @@ gulp.task('build', function(callback) {
     .pipe(gulp.dest('build'));
 });
 
+gulp.task('build:nokeys', function(callback) {
+  gulp.src('web/nokeys.js')
+    .pipe(browserify({
+      transform: ['yo-yoify'],
+      debug: false
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('build'));
+});
+
 gulp.task('deploy', function() {
   return gulp.src('build/**/*')
     .pipe(ghPages());
 });
 
-gulp.task('default', ['html', 'build']);
+gulp.task('default', ['html', 'build', 'build:nokeys']);
